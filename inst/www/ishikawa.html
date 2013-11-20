@@ -38,6 +38,8 @@ $(document).ready(function(){
 	temp = temp.replace(/\r?\n/g, '')
 	temp = temp.replace(/\s+$/g, '')
 	temp = temp.replace(/,$/g, '')
+	temp = temp.replace(/\)/g, '\),')
+	temp = temp.replace(/,,/g, ',')
 	var req = $('#target').contents().find('#plotdiv').r_fun_plot("ishikawa", {
 	  content: temp,
 	  theme : $("#theme").val()
@@ -113,13 +115,13 @@ columns:100px 2;
 			<li><a href="https://en.wikipedia.org/wiki/Health_belief_model#Constructs">HBM</a> (Health belief model)</li>
 			<li><a href="https://en.wikipedia.org/wiki/Transtheoretical_model#Stages_of_change">TTM</a> (Transtheoretical model)</li>
 			</ul>
-<div id="editor">Provider=c('Distracted','Unaware','Inaccessible knowledge','Nonparsable documentation','Not motivated','Not done: reason unknown'),
+<div id="editor">'Provider'=c('Distracted','Unaware','Inaccessible knowledge','Nonparsable documentation','Not motivated','Not done: reason unknown'),
 
-Patient=c('No visit during time period','Multiple complaints','TTM: early stage','HBM: ____', 'No resource: _____'),
+'Patient'=c('No visit during time period','Multiple complaints','TTM: early stage','HBM: ____', 'No resource: _____'),
 
-System=c('Acute vs continuity visit', 'Specialty vs primary care', 'Personnel absent','Supplies unavailable','Bean counting error'),
+'System'=c('Acute vs continuity visit', 'Specialty vs primary care', 'Personnel absent','Supplies unavailable','Bean counting error'),
 
-Personnel=c('Distracted','Inaccessible knowledge','Nonparsable documentation','Not done: reason unknown','Not motivated','Not empowered')
+'Personnel'=c('Distracted','Inaccessible knowledge','Nonparsable documentation','Not done: reason unknown','Not motivated','Not empowered')
 </div>	
             <br />
 
